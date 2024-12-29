@@ -47,11 +47,17 @@ export const useCartShoping = () => {
       });
     };
 
+    const clearCart = () => {
+      setCart([]); 
+      setTotalItems(0);
+    };
+
     return {
         cart,
         totalItems,
         addToCart,
         removeFromCart,
+        clearCart,
       };
     
 };

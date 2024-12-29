@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const ShoppingCar = () => {
-  const { cart, totalItems, addToCart, removeFromCart } = useContext(CarShopingContext);
+  const { cart, totalItems, addToCart, removeFromCart, clearCart  } = useContext(CarShopingContext);
 
   return (
     <section className="m-6 pt-24 pl-5 gap-4 h-screen overflow-hidden">
@@ -85,7 +85,9 @@ const ShoppingCar = () => {
               </div>
               <div>
                 <Link to={`/finish`}>
-                      <button className="bg-blue-500 text-white py-1 px-4 rounded mt-4 hover:bg-blue-600">
+                      <button 
+                      onClick={() => clearCart()}
+                      className="bg-blue-500 text-white py-1 px-4 rounded mt-4 hover:bg-blue-600">
                           Comprar
                       </button>
                   </Link>
