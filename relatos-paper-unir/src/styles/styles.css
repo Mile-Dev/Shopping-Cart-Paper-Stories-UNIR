@@ -1,0 +1,62 @@
+/* General */
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FF6600; /* Naranja */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  z-index: 50;
+}
+
+/* Centrar contenido */
+header.header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column; /* Para apilar el primer y segundo div */
+}
+
+/* Configuración de las columnas */
+header.header .columns {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Primer div con 5 columnas */
+header.header .columns-top {
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr; /* La segunda columna es más ancha */
+}
+
+/* Segundo div con 3 columnas */
+header.header .columns-bottom {
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+  margin-top: 16px; /* Espaciado respecto al div superior */
+}
+
+/* Estilo para cada columna */
+header.header .column {
+  text-align: center; /* Centra el texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: normal; /* Texto sin negrita por defecto */
+  color: white; /* Color del texto */
+}
+
+/* Texto destacado (opcional) */
+header.header .column .title {
+  font-weight: bold; /* Títulos en negrita */
+  font-size: 1.2rem; /* Tamaño ligeramente mayor */
+}
+
+header.header .column .subtitle {
+  font-size: 0.9rem; /* Tamaño menor para subtítulos */
+}
+
+header.header .column-flex {
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: start; /* Alinea el contenido hacia la izquierda */
+}
+
