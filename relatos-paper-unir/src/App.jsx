@@ -6,6 +6,7 @@ import Router from './routes/Router';
 import {BookContext} from "./context/BookContext";
 import {useBooks} from "./hooks/useBooks";
 import { CarShoppingProvider } from "./hooks/useCartShoping";
+import { SearchValueProvider  } from "./hooks/useSearchValue";
 
 import './styles/styles.css'
 
@@ -18,7 +19,9 @@ function App() {
     <>
     <CarShoppingProvider>
     <BookContext.Provider value={{books }}>
+    <SearchValueProvider>
      <Router> </Router> 
+    </SearchValueProvider>
     </BookContext.Provider>   
     </CarShoppingProvider>  
     </>

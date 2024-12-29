@@ -2,9 +2,15 @@ import React, {useContext} from 'react';
 import { CardBook } from "./CardBook";
 import SideList from "./SideList";
 import {BookContext} from "../context/BookContext";
+import { SearchValueContext } from "../context/SearchValueContext";
+
 
 const Home = () => {
   const { books } = useContext(BookContext);
+  const { searchValue } = useContext(SearchValueContext);
+
+  console.log("### Home", searchValue )
+ 
 
     return (  
      <section className="pt-24 pl-5 flex gap-4 h-screen overflow-hidden">
