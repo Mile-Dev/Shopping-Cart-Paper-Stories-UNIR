@@ -31,7 +31,7 @@ const DetailBook = () => {
             alert(`No puedes agregar más de ${book.cantidad} unidades al carrito.`);
             return;
           }  
-          addToCart(book, quantity); // Llama a addToCart con el libro y la cantidad
+          addToCart(book, quantity); 
         };
 
     return (

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import libro1 from "../assets/images/libro-abierto.png"; // Importar la imagen
-import libro2 from "../assets/images/libro-cerrado.png"; // Importar la imagen
-import libro3 from "../assets/images/libro.png"; // Importar la imagen
+import libro1 from "../assets/images/libro-abierto.png"; 
+import libro2 from "../assets/images/libro-cerrado.png"; 
+import libro3 from "../assets/images/libro.png"; 
 
 export const useBooks = () => {
     const [books, setBooks] = useState([]);

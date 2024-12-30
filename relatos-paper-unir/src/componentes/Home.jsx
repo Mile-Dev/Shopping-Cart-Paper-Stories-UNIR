@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import { CardBook } from "./CardBook";
 import SideList from "./SideList";
 import {BookContext} from "../context/BookContext";
@@ -8,9 +8,19 @@ import { SearchValueContext } from "../context/SearchValueContext";
 const Home = () => {
   const { books } = useContext(BookContext);
   const { searchValue } = useContext(SearchValueContext);
+  const [displayBooks, setDisplayBooks] = useState(books);
 
-  console.log("### Home", searchValue )
- 
+  useEffect(() => {
+    if (searchValue) {
+      const filteredBooks = books.filter((book) =>
+        (book.name || "").toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setDisplayBooks(filteredBooks);
+    } else {
+      setDisplayBooks(books); 
+    }
+  }, [searchValue, books]); 
+
 
     return (  
      <section className="pt-24 pl-5 flex gap-4 h-screen overflow-hidden">
@@ -22,7 +32,7 @@ const Home = () => {
         {/* Contenido Principal */}
         <div className="flex-grow overflow-y-auto p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 contentcard">
-            {books.map((book) => (
+            {displayBooks.map((book) => (
               <CardBook
                 key={book.id}
                 id={book.id}
